@@ -53,8 +53,6 @@
               $notifications = mysqli_query($strConnection, $query);
 
               while ($row = mysqli_fetch_assoc($notifications)) {
-                print_r($row);
-                echo $row;
               ?>
                 <li class="dropdown__item <?= $row['color'] ?>">
                   <div class="circle"></div>

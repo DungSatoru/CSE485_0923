@@ -7,3 +7,4 @@ $query = "DELETE FROM USERS WHERE id = $id";
 mysqli_query($strConnection, $query);
 mysqli_close($strConnection);
 header("Location: index.php");
+?>

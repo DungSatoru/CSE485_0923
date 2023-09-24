@@ -42,13 +42,13 @@ function ToggleElementClass(elements, className, secondElement = "", secondClass
 }
 
 function toggleCheckboxes(checkboxSelector, elementSelector) {
-    const $checkboxElement = $(checkboxSelector);
-    const $elements = $(elementSelector);
+	const $checkboxElement = $(checkboxSelector);
+	const $elements = $(elementSelector);
 
-    $checkboxElement.on("change", function() {
-        const isChecked = $(this).prop("checked");
-        $elements.prop("checked", isChecked);
-    });
+	$checkboxElement.on("change", function () {
+		const isChecked = $(this).prop("checked");
+		$elements.prop("checked", isChecked);
+	});
 }
 
 $(document).ready(function () {
@@ -63,7 +63,7 @@ $(document).ready(function () {
 
 	// Xử lý checkboxs
 	const checkboxElement = $(".primary__checkbox");
-    toggleCheckboxes(checkboxElement, ".content_checkbox");
+	toggleCheckboxes(checkboxElement, ".content_checkbox");
 
 
 	const btnElement = $(".filter__btn");
@@ -95,3 +95,14 @@ $(document).ready(function () {
 		}
 	});
 });
+
+
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+	if (event.target == modal) {
+		modal.style.display = "none";
+	}
+}

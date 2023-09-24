@@ -49,7 +49,7 @@
             $query = "select * from users where id ='$id'";
             $users = mysqli_query($strConnection, $query);
             $user = mysqli_fetch_array($users);
-          }
+          } 
           ?>
           <form action="index.php" method="post" class="myForm">
             <div class="form__header">
