@@ -20,7 +20,7 @@ if (isset($_POST['sbmSave'])) {
         $stmt = $conn->prepare($sql_insert);
         $stmt->execute();
         if ($stmt->rowCount() > 0) {
-            header("Location:http://127.0.0.1/CSE485/CSE485_0923/BTTH03/public/index.php?error=added");
+            header("Location:" . DOMAIN . "/public/index.php?error=added");
         }
     }
 }

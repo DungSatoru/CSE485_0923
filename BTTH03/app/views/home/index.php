@@ -18,13 +18,13 @@
             <div class="col-md-12">
                 <ul class="list-unstyled d-flex">
                     <li style="background-color: #ccc; border-radius: 10px; width: 250px;" class="p-3 ">
-                        <a style="font-size: 50px;" href="<?= DOMAIN ?>/public/index.php?controller=getListStudent" class="d-block text-center text-decoration-none">
+                        <a style="font-size: 50px;" href="<?= DOMAIN ?>/public/index.php?controller=home&action=GetListStudent" class="d-block text-center text-decoration-none">
                             <i class="fa-solid fa-building-columns"></i>
                             <p style="font-size: 20px;">Danh sách sinh viên</p>
                         </a>
                     </li>
                     <li style="background-color: #ccc; border-radius: 10px;  width: 250px;" class="p-3 ">
-                        <a style="font-size: 50px;" href="<?php DOMAIN . './index.php?controller=getListStudent' ?>" class="d-block text-center text-decoration-none">
+                        <a style="font-size: 50px;" href="<?= DOMAIN . '/public/index.php?controller=home&action=addStudent' ?>" class="d-block text-center text-decoration-none">
                             <i class="fa-solid fa-building-columns"></i>
                             <p style="font-size: 20px;">Thêm sinh viên</p>
                         </a>

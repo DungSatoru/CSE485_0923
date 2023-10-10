@@ -1,5 +1,6 @@
 <?php
 require_once APP_ROOT . '/app/services/StudentService.php';
+require_once APP_ROOT . '/app/services/ClsService.php';
 class HomeController
 {
     public function index()
@@ -15,15 +16,22 @@ class HomeController
         $studentService = new StudentService();
         $students = $studentService->getAllStudents();
         // Render dữ liệu được lấy ra từ HomePage
-        header("Location: " . DOMAIN . "/app/views/Student/index.php");
-        // header("Location:http://127.0.0.1/CSE485/CSE485_0923/BTTH03/app/views/Student/addStudent.php?error=existed");
-        // include_once APP_ROOT . '/app/views/Student/index.php';
+        require APP_ROOT . "/app/views/Student/index.php";
     }
     public function addStudent()
     {
         // Gói dữ liệu từ StudentService
 
         // Render dữ liệu được lấy ra từ HomePage
-        header("Location: /app/views/Student/addStudent.php");
+        require APP_ROOT . "/app/views/Student/addStudent.php";
+    }
+    public function GetListClass()
+    {
+        // Gói dữ liệu từ ClsService
+        $clsService = new ClsService();
+        $clss = $clsService->getAllClass();
+
+        // Render dữ liệu được lấy ra từ HomePage
+        require APP_ROOT . "/app/views/Cls/index.php";
     }
 }

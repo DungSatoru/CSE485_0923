@@ -1,6 +1,6 @@
 <?php
-// require_once APP_ROOT . '/app/models/Student.php';
-class ClassService
+require_once APP_ROOT . '/app/models/Cls.php';
+class ClsService
 {
     public function getAllClass()
     {
@@ -11,16 +11,14 @@ class ClassService
             $sql = "SELECT * FROM Lop";
             $stmt = $conn->query($sql);
             // Bước 3: Xử lý kết quả trả về
-            $class_s = [];
+            $clss = [];
             while ($row = $stmt->fetch()) {
-                $class = new ClassName($row['id'], $row['tenLop']);
-                $class_s[] = $class;
+                $cls = new Cls($row['id'], $row['tenLop']);
+                $clss[] = $cls;
             }
-            return $class_s;
+            return $clss;
         } catch (PDOException $e) {
-            return $classs = [];
+            return $clss = [];
         }
     }
-
-    
 }

@@ -13,32 +13,25 @@
 
 <body>
     <div class="container">
-        <h2 class="text-uppercase text-center text-success my-5">Quản lý Sinh Viên</h2>
-        <a href="<?= DOMAIN."/public/index.php?controller=home&action=addStudent" ?>" type="button" class="btn btn-success font-weight-bolder mb-3"><i class="bi bi-person-add"></i> Add Student</a>
+        <h2 class="text-uppercase text-center text-success my-5">Quản lý lớp học</h2>
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">Mã sinh viên</th>
-                    <th scope="col">Họ và tên</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Ngày sinh</th>
+                    <th scope="col">Mã lớp học</th>
                     <th scope="col">Lớp</th>
                     <th scope="col">Tùy chọn</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                foreach ($students as $student) {
+                foreach ($clss as $cls) {
                 ?>
                     <tr>
-                        <th scope="row"><?= $student->getId() ?></th>
-                        <td><?= $student->getTenSinhVien() ?></td>
-                        <td><?= $student->getEmail() ?></td>
-                        <td><?= $student->getNgaySinh() ?></td>
-                        <td><?= $student->getTenLop() ?></td>
+                        <th scope="row"><?= $cls->getId() ?></th>
+                        <td><?= $cls->getTenLop() ?></td>
                         <td>
                             <ul class="content__menu list-unstyled d-flex justify-content-around">
-                                <li><a style="color: green;" href="./user_info.php?id=<?= $user['id'] ?>"><i class="bi bi-eye-fill"></i></a></li>
+                                <li><a style="color: green;" href="./user_info.php?id=<?= $cls['id'] ?>"><i class="bi bi-eye-fill"></i></a></li>
                                 <li><a style="color: blue;" href="./user_edit.php?id=<?= $user['id'] ?>"><i class="bi bi-pencil"></i></a></li>
                                 <li><a style="color: red;" href=""><i class="bi bi-trash3"></i></a></li>
                             </ul>

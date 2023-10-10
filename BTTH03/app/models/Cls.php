@@ -1,5 +1,5 @@
 <?php
-class ClassName
+class Cls
 {
     // Properties
     private $id;
