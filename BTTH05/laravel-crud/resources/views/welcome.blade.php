@@ -1,4 +1,7 @@
 @extends('layouts.app')
 @section('content')
-<h1>Xin chào</h1>
+<div class="container mt-3">
+
+    <h1>Hello mem...</h1>
+</div>
 @endsection

@@ -21,7 +21,7 @@ class AuthorController extends Controller
      */
     public function create()
     {
-        //
+        return view('authors.create');
     }
 
     /**
@@ -29,7 +29,16 @@ class AuthorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = $request->validate([
+            'name' => 'required',
+            'bio' => 'required',
+        ]);
+        // Author::create($request->all());
+        $author = new Author();
+        $author->name = $validator['name'];
+        $author->bio = $validator['bio'];
+        $author->save();
+        return redirect()->route('authors.index')->with('success', 'Author Created successfully.');
     }
 
     /**
@@ -37,7 +46,7 @@ class AuthorController extends Controller
      */
     public function show(Author $author)
     {
-        return view('authors.index', compact('author'));
+        return view('authors.show', compact('author'));
     }
 
     /**
@@ -45,15 +54,23 @@ class AuthorController extends Controller
      */
     public function edit(Author $author)
     {
-        //
+        return view('authors.edit', compact('author'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Author $author)
+    public function update(Request $request, string $id)
     {
-        //
+        $validator = $request->validate([
+            'name' => 'required',
+            'bio' => 'required',
+        ]);
+        $author =  Author::find($id);
+        $author->name = $validator['name'];
+        $author->bio = $validator['bio'];
+        $author->save();
+        return redirect()->route('authors.index')->with('success', 'Author Created successfully.');
     }
 
     /**

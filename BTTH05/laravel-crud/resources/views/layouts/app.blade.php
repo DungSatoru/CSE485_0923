@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Default Title')</title>
+    <link rel="shortcut icon" href="https://static-00.iconduck.com/assets.00/open-book-icon-2048x2048-wuklhx59.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Thêm CSS Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
@@ -21,10 +22,10 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="books">Books</a>
+                            <a class="nav-link active" aria-current="page" href="/books">Books</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="authors">Authors</a>
+                            <a class="nav-link active" aria-current="page" href="/authors">Authors</a>
                         </li>
                         
                     </ul>
@@ -41,6 +42,7 @@
         <!-- Footer content -->
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

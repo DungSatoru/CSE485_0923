@@ -20,6 +20,7 @@ class AuthorsTableSeeder extends Seeder
         for ($i = 0; $i < 50; $i++){
             Author::create([
                 'name' => $faker->name,
+                'bio' => $faker->paragraph(1),
             ]);
         }
     }
