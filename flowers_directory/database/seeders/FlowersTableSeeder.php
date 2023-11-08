@@ -17,7 +17,7 @@ class FlowersTableSeeder extends Seeder
             Flower::create([
                 'name' => $faker->name,
                 'description' => $faker->text,
-                'image' => $faker->imageUrl($width = 200, $height = 200),
+                'image_url' => $faker->imageUrl($width = 200, $height = 200),
             ]);
         }
     }

@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use App\Models\Book;
+
+class Author extends Model
+{
+    use HasFactory;
+
+    public function getGenderNameAttribute()
+    {
+        /* 0 là Nữ, 1 là Nam */
+        return $this->gender == '0' ? 'Female' : 'Male';
+    }
+    public function book()
+    {
+        return $this->hasMany(Book::class);
+    }
+}

@@ -6,17 +6,18 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Faker\Factory as Faker;
+use App\Models\Flower;
 use App\Models\Region;
 class RegionsTableSeeder extends Seeder
 {
     public function run(): void
     {
-        DB::table("flowers")->delete();
+        DB::table("regions")->delete();
+        $flowerID = Flower::all()->pluck("id")->toArray();
         $faker = Faker::create();
         for ($i = 0; $i < 50; $i++) {
             Region::create([
-                'name' => $faker->name,
-                'flower_id' => $faker->randomElement,
+                'flower_id' => $faker->randomElement($flowerID),
                 'region_name' => $faker->streetName,
             ]);
         }

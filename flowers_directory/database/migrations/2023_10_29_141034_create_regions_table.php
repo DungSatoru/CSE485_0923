@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('regions', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('flower_id');
-            $table->foreign('flower_id')->references('id')->on('flowers');
+            $table->foreign('flower_id')->references('id')->on('flowers')->onDelete('cascade');
             $table->string('region_name');
             $table->timestamps();
         });

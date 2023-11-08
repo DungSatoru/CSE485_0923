@@ -19,6 +19,7 @@
                     @endif
 
                 </div>
+                <h1>{{$woman->image}}</h1>
                 <div class="bg-light-gray padding-30px-all md-padding-25px-all sm-padding-20px-all text-center">
                     <h2 class="margin-10px-bottom font-size24 md-font-size22 sm-font-size20 font-weight-600 mt-3">{{$woman->name}}</h2>
                 </div>

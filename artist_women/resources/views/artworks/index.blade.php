@@ -12,6 +12,7 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
+                <th scope="col">Avatar</th>
                 <th scope="col">Name</th>
                 <th scope="col">description</th>
                 <th scope="col">Detail</th>
@@ -23,6 +24,17 @@
             @foreach($artworks as $artwork)
             <tr>
                 <th scope="row">{{$artwork->id}}</th>
+                <td>
+                    <div class="team-single-img rounded overflow-hidden">
+                        @if(strpos($artwork->cover_image, 'http') === 0)
+                        <!-- Loại <img> cho trường hợp hình ảnh trực tuyến -->
+                        <img style="width: 50px; height: 50px; object-fit:cover;" class="rounded" src="{{ $artwork->cover_image }}" alt="Hình ảnh">
+                        @else
+                        <!-- Loại <img> cho trường hợp hình ảnh trong storage -->
+                        <img style="width: 50px; height: 50px; object-fit:cover;" class="rounded" src="{{asset('storage/' . $artwork->cover_image) }}" alt="Hình ảnh">
+                        @endif
+                    </div>
+                </td>
                 <td>{{$artwork->artist_name}}</td>
                 <td>{{$artwork->description}}</td>
                 <td><a href="{{route('artworks.show', $artwork->id)}}"><button type="button" class="btn btn-info"><i class="fa-solid fa-eye"></i></button></a></td>
@@ -57,7 +69,7 @@
             @endforeach
         </tbody>
     </table>
-    <div class="paginator">
+    <div class="paginator ">
         {{ $artworks->links() }}
     </div>
 </div>
